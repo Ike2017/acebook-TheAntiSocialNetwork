@@ -12,12 +12,11 @@
   <a class="new-post-link" href="/main">Click here to navigate to main page</a>
   {{!-- <script src="javascript/login/index"></script> --}}
   <div id="curr_time"></div>
-  <h1 class="title">{{title}}</h1>
-  <h1 class="title">Home Page</h1>
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
 <div id="navwrapper">
+<<<<<<< HEAD
   <div id="navbar"> <table class="tablewrapper" method="post" >
    <form>
     <tr>
@@ -41,26 +40,50 @@
 
     <h2 class="logowrapper">Acebook by The Anti-Social Network</h2>
    
+=======
+  <div id="navbar"> <table class="tablewrapper">
+    <form class="" action="/auth" method="post">
+      <tr>
+        <td class="row1">Email</td>
+        <td class="row1">Password</td>
+      </tr>
+      <tr>
+        <td><input type="text" name= "email" class="inputtext">
+        </td>
+        <td><input type="text" name= "password" class="inputtext">
+        </td>
+        <td><button type="submit" value = "Submit" id="button">Log In</button></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="row2"><input type="checkbox" checked>Keep me logged in</div></td>
+        <td class="row2 h">Forgot your password?</td>
+    </table>
+    </form>
+
+    <h2 class="title" class="logowrapper">{{title}} by The Anti-Social Network</h2>
+
+>>>>>>> origin/jims_branch
   </div>
   </div>
 
   <div id="contentwrapper">
     <div id="content">
-      
+
       <div id="leftbod">
-        
+
         <div class="connect bolder">
           Un-Connect with friends and the
           world around you on Acebook.</div>
-        
+
         <div class="leftbar">
           <img src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xap1/t39.2365-6/851565_602269956474188_918638970_n.png" alt="" class="iconwrap fb1"/>
           <div class="fb1">
             <span class="rowtext">See posts (if you want)</span>
             <span class="rowtext2 fb1">from friends (if you have)</span>
           </div>
-        </div> 
-          
+        </div>
+
           <div class="leftbar">
           <img src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xap1/t39.2365-6/851585_216271631855613_2121533625_n.png" alt="" class="iconwrap fb1"/>
           <div class="fb1">
@@ -68,11 +91,11 @@
             <span class="rowtext2 fb1">in your life on your timeline</span>
             </div>
           </div>
-                         
+
       </div>
-       
+
       <div id="rightbod">
-        
+
         <div class="logowrapper">
           <img src="images/AntiSocial_logo.png" alt="The Anti-Social Network Logo">
         </div>
@@ -80,7 +103,7 @@
             <div class="formbox">
               <div class="agree">
                 By clicking Sign Up, you agree to our <div class="link">Terms</div> and that you have read our <div class="link">Data Use Policy</div>, including our <div class="link">Cookie Use</div>.
-              </div>  
+              </div>
             </div>
             <div class="formbox">
               <button type="submit" class="btn btn-primary"><a href= '/user'>Signup</a></button>

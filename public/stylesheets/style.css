@@ -367,7 +367,7 @@ button
     color: #f1f1f1;
 }
 
-main
+/* main
 {
     width: 1280px;
     margin: 0 auto;
@@ -375,7 +375,7 @@ main
     box-shadow: 0px 8px 30px #1d2d4f;
     border-radius: 4px;
     overflow: hidden;
-}
+} */
 
 #device-bar-1
 {
@@ -1405,4 +1405,92 @@ header
     text-align: center;
     margin: 0 auto;
 }
-/* Footer finished */ 
+/* Footer finished */
+
+/* CSS for POSTS Page */
+
+@import url("https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans+Condensed:300");
+.wrapper {
+  background-color: #F5E5F5;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  font: normal 16px/26px Open Sans Condensed, sans-serif;
+  color: #fff;
+  padding: 100px 20px 200px;
+  box-sizing: border-box;
+}
+#block {
+  z-index: 1;
+  position: relative;
+  margin-bottom: 90px;
+}
+#block:before {
+  content: "";
+  position: absolute;
+  height: calc(100% - 40px);
+  width: 1px;
+  background-color: black;
+  left: 50%;
+  margin-top: 90px;
+}
+}
+.title {
+font: bold 42px/52px Open Sans Condensed, sans-serif;
+text-align: center;
+padding: 20px;
+transition: all 0.8s ease-in-out;
+}
+.each-event {
+background-color: #BC8F8F;
+color: black;
+padding: 15px;
+margin: 60px 20px;
+width: 300px;
+position: relative;
+border-radius: 4px;
+box-sizing: border-box;
+transition: all 0.3s ease-in-out;
+}
+.each-event:before {
+content: "";
+position: absolute;
+top: calc(50% - 8px);
+left: -27px;
+width: 16px;
+height: 16px;
+border-radius: 50%;
+background-color: black;
+box-shadow: 0 4px 20px -4px rgba(64, 64, 64, 0.8);
+}
+.each-event:nth-child(odd) {
+margin-left: calc(50% + 20px);
+}
+.each-event:nth-child(even) {
+margin-left: calc(50% - 321px);}
+.each-event:nth-child(even):before {
+  left: calc(100% + 14px);
+}
+}
+}
+.title.non-focus {
+font-size: 24px;
+line-height: 34px;
+transition: all 0.8s ease-in-out;
+}
+.each-event.non-focus {
+color: #D2D2D2;
+background: #E6E6E6;
+margin-top: 90px;
+transform: rotateZ(180deg);
+transition: all 0.8s ease-in-out;
+}
+.each-event.non-focus:before {
+opacity: 0;
+background-color: #aaa;
+}
+#date{
+font-size: 50px;
+color: black;
+text-align: center;
+}

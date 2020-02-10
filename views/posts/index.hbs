@@ -1,51 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
+  <meta charset="utf-8">
   <title>Acebook-Timeline</title>
+  <link rel="stylesheet" type="text/css" src="./public/stylesheets/style.css">
   <style>
-
-    section{
-      background: white;
-    }
-    .center{
-      margin: 20px;
-      margin-top: -20px;
-      width: 80%;
-      border: 20px solid black;
-      padding: 10px;
-    }
-    textarea{
-      margin-left: 40px;
-      width: 60%;
-      padding: 20px;
-    }
-    nav a{
-      margin-top:-40px;
-      float: right;
-    }
-  </style>
+  nav a{
+    display: inline;
+    margin-top: -80px;
+    margin-right: -190px;
+    float: right;
+  }
+</style>
 </head>
-<nav>
-  <a class="new-post-link" href="/">
-    <img src="https://image.flaticon.com/icons/svg/20/20176.svg" width="140" height="40">
-  </a>
-</nav>
-<h1 style="color: black; margin: 50px;">Timeline</h1>
-<br><br>
-<div class="center" >
-<ul class="posts">
-  {{#each posts}}
-  <section>
-    <li>{{this.message}}</li>
-    <li>{{this.date}}</li>
-    <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/{{this.id}}" method="post">
-        <input type="hidden" name="_method" value="DELETE" />
-        <input type="submit" value="Delete" />
-    </form>
-  </section>
-  {{/each}}
-</ul>
-</div>
-<br>
-
-
-<a class="new-post-link" href="/posts/new">New post</a><br/>
-<a class="new-post-link" href="/">Home Page</a>
+<body>
+  <nav>
+    <div id="navwrapper">
+      <div id="navbar">
+        <h1 class="logowrapper" style="color: white;">Acebook</h1>
+        <a class="new-post-link" href="/">
+          <img src="https://image.flaticon.com/icons/svg/20/20176.svg" width="140" height="40">
+        </a>
+      </div>
+    </div>
+  </nav>
+  <h1 style="color: black; margin: 50px;">Timeline</h1>
+  <!-- HTML SCSS JSResult
+  EDIT ON ****CodePen example -->
+  <div class="wrapper" style="margin-top: -40px;">
+    <section id="block" class="posts">
+      <div class="each-year">
+        <div class="title" id="date">2020</div>
+          {{#each posts}}
+          <div class="each-event">
+            <div class="event-description">
+              <li>{{this.message}}</li>
+              <li style="margin-bottom: 20px;">{{this.date}}</li>
+              <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/{{this._id}}" method="post">
+                <input type="hidden" name="_method" value="DELETE" />
+                <input type="submit" value="Delete" />
+              </form>
+            </div>
+          </div>
+          {{/each}}
+    </section>
+    <section class="block">
+      <div class="each-year">
+        <div class="title" id="date">2019</div>
+        <div class="each-event">
+          <div class="event-description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <a class="new-post-link" href="/posts/new">New post</a><br/>
+  <a class="new-post-link" href="/">Home Page</a>
+  <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-db44b196776521ea816683afab021f757616c80860d31da6232dedb8d7cc4862.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script id="rendered-js">
+  var $element = $('.each-event, .title');
+  var $window = $(window);
+  $window.on('scroll resize', check_for_fade);
+  $window.trigger('scroll');
+  function check_for_fade() {
+    var window_height = $window.height();
+    $.each($element, function (event) {
+      var $element = $(this);
+      var element_height = $element.outerHeight();
+      var element_offset = $element.offset().top;
+      space = window_height - (element_height + element_offset - $(window).scrollTop());
+      if (space < 60) {
+        $element.addClass("non-focus");
+      } else {
+        $element.removeClass("non-focus");
+      }
+    });
+  };
+  </script>
+</body>
+</html>

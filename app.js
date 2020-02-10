@@ -3,10 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session')
 
 var homeRouter = require('./routes/home');
 var postsRouter = require('./routes/posts');
 var userRouter = require('./routes/user');
+var authRouter = require('./routes/auth');
 var mainRouter = require('./routes/main');
 
 var app = express();
@@ -27,11 +29,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'work harder',
+  resave: true,
+  saveUninitialized: false
+}));
 
 // route setup
 app.use('/', homeRouter);
 app.use('/posts', postsRouter);
 app.use('/user', userRouter);
+app.use('/auth', authRouter);
 app.use('/main', mainRouter);
 
 
